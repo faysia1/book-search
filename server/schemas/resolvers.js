@@ -8,7 +8,6 @@ const resolvers = {
             if (context.user) {
                 const userData = await User.findOne({ _id: context.user._id })
                 .select('-__v -password')
-                .populate('book');
                 return userData;
             }
             throw new AuthenticationError('Not logged in!');
@@ -38,7 +37,6 @@ const resolvers = {
         },
 
         saveBook: async (parent, { book }, context) => {
-            console.log(book, context.user);
             if (context.user) {
                 const newUser = await User.findOneAndUpdate(
                     { _id: context.user._id },

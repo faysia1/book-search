@@ -10,7 +10,6 @@ import {
 
 import { useMutation } from '@apollo/react-hooks';
 import {SAVE_BOOK} from '../utils/mutations';
-import { GET_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
 import { saveBook, searchGoogleBooks } from '../utils/API';
@@ -79,7 +78,7 @@ const SearchBooks = () => {
 
     try {
       await saveBook({
-        variables: {book: bookToSave},
+        variables: {bookInput: bookToSave},
       });
 
       // if book successfully saves to user's account, save book id to state

@@ -7,6 +7,10 @@ const bookSchema = new Schema({
       type: String,
     },
   ],
+  title: {
+    type: String,
+    required: true,
+  },
   description: {
     type: String,
     required: true,
@@ -21,11 +25,7 @@ const bookSchema = new Schema({
   },
   link: {
     type: String,
-  },
-  title: {
-    type: String,
-    required: true,
-  },
+  }
 });
 
 module.exports = bookSchema;

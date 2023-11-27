@@ -24,7 +24,7 @@ const client = new ApolloClient({
 function App() {
   return (
   <ApolloProvider  client ={client}>
-       {/* <Router> */}
+       <Router> 
       <>
         <Navbar />
         <Routes>
@@ -33,7 +33,7 @@ function App() {
           <Route path='/saved' element={<SavedBooks />} />
         </Routes>
       </>
-    {/* </Router> */}
+    </Router>
   </ApolloProvider>
  
   );
